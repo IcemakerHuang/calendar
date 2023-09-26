@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+
+        // 平年
+        // 1->31 (+1) （Ｘ）
+        // 1+2->59 (-1)  
+        // 1+2+3->90 (0)  
+        // 1+2+3＋4->120 (0)  
+        // 1+2+3＋4＋5->151 (+1) 
+        // 1+2+3＋4＋5+6->181 (+1) 
+        // 1+2+3＋4＋5+6+7->212 (+2)
+        // 1+2+3＋4＋5+6+7+8->243 (+3)
+        // 1+2+3＋4＋5+6+7+8+9->273 (+3)
+        // 1+2+3＋4＋5+6+7+8+9+10->304 (+4)
+        // 1+2+3＋4＋5+6+7+8+9+10+11->334 (+4)
+        // 1+2+3＋4＋5+6+7+8+9+10+11+12->365 (+5) （Ｘ）
+        
+        
+        var year = prompt('年')
+        var mouth = prompt('月')
+        var date = prompt('日')
+        year = parseInt(year)
+        mouth = parseInt(mouth)
+        date = parseInt(date)
+
+
+        if(mouth>2 && (year%4 == 0 && year%100 > 0)|| (year%400 == 0) || (year%1000==0) ){
+            date++
+            console.log(date)
+            
+        var j = 0
+            for(var i = 1 ; i <= mouth-1 ; i++ ){
+            if(i < mouth-1){
+                continue
+            }
+            j = i*30
+            console.log(j)
+        }
+
+        var k = 0
+                if(mouth==2||mouth==6||mouth==7){
+                    k =j+1
+                }else if(mouth==3){
+                    k =j-1
+                }else if(mouth==8){
+                    k =j+2
+                }else if(mouth==9||mouth==10){
+                    k =j+3
+                    k = parseInt(k)
+                    console.log(k)
+                }else if(mouth==11||mouth==12){
+                    k =j+4
+                }else{
+                    alert('月份輸入錯誤')
+                }
+
+                date=date+k
+                document.write(`您輸入的是${year}年的第${date}天`)
+            
+            
+            }else{
+            var j = 0
+            for(var i = 1 ; i <= mouth-1 ; i++ ){
+            if(i < mouth-1){
+                continue
+            }
+            j = i*30
+            console.log(j)
+            }
+
+            var k = 0
+                if(mouth==2||mouth==6||mouth==7){
+                    k =j+1
+                }else if(mouth==3){
+                    k =j-1
+                }else if(mouth==8){
+                    k =j+2
+                }else if(mouth==9||mouth==10){
+                    k =j+3
+                    k = parseInt(k)
+                    console.log(k)
+                }else if(mouth==11||mouth==12){
+                    k =j+4
+                }else{
+                    alert('月份輸入錯誤')
+                }
+
+                date=date+k
+                document.write(`您輸入的是${year}年的第${date}天`)
+
+        }
+
+
+
+                // if(mouth>2&&(year%4 == 0 && year%100 > 0)|| (year%400 == 0) || (year%1000==0) ){
+                //     var l = k+1
+                //     l = parseInt(l)
+                //     console.log(l)
+                // }
+                // var m = k+l
+                // m = parseInt(m)
+                // document.write(`您輸入的是${year}年的第${m}天`)
+
+            
+
+
+
+                // 自己曾經寫的錯誤示範：判斷 == 的寫法錯誤
+                // if(mouth==2||6||7){
+                //     var k =j+1
+                // }else if(mouth==3){
+                //     var k =j-1
+                // }else if(mouth==8){
+                //     var k =j+2
+                // }else if(mouth==9||10){
+                //     var k =j+3
+                //     console.log(k)
+                // }else if(mouth==11||12){
+                //     var k =j+4
+                // }else{
+                //     alert('月份輸入錯誤')
+                // }
+
+
+
+        // if(mouth=2||6||7){
+        //     var k =j+1
+        // }else if(mouth=3){
+        //     var k =j-1
+        // }else if(mouth=8){
+        //     var k =j+2
+        // }else if(mouth=9||10){
+        //     var k =j+3
+        //     console.log(k)
+        // }else if(mouth=11||12){
+        //     var k =j+4
+        // }else{
+        //     alert('月份輸入錯誤')
+        // }
+
+
+        // if(mouth>2&&(year%4 == 0 && year%100 > 0)|| (year%400 == 0) || (year%1000==0) ){
+        //     date++
+        //     document.write(`您輸入的是${year}年的第${k+date}天`)
+        //     console.log(k+date)
+        // }
+
+
+
+    </script>
+</body>
+</html>
